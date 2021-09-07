@@ -1,4 +1,4 @@
-// --------- Implementation  of hashmap contain linear probing ---------
+// --------- Implementation  of hashmap using linear probing ---------
 
 // hashmap.h contain all function declaration.
 // include <stdbool.h> for using bool as return type.
