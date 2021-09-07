@@ -1,4 +1,4 @@
-## Library For HashMap Data Structure and STL Functions - HashStl.h.
+## Implementation of HashMap Data Structure and STL Functions For C Users.
 ___
 #### Description :
 What is Hashmap ? 
@@ -14,7 +14,7 @@ What is count and find in STL ? <br>
 Count returns number of occurrences of an element in a given range. <br>
 Finds the element in the given range of numbers.<br><br>
 
-![alt text](https://miro.medium.com/max/637/1*w1mRVHC1hNc2ywDoYibkiA.jpeg)<br><br>
+![alt text](https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2015/08/openAddressing1.png)<br>Pic credit : GFG <br><br>
 Applications of Hashmap is as follows :
 -	Priority Queues
 -	Dijkstra's Algorithm
@@ -34,45 +34,56 @@ ___
      -	Searching a Key.
      -	Deleting a Key , if needed.
      -	Clear Hashmap.
+     -	Finding value corresponding to key.
+     -	Size of Hashmap.
      -	Upper bound and Lower bound.
      -	Inbuilt Sort and Reverse.
-     -  Count and Find.
--	Making it as a library for user , as there is no inbuilt library for Hashmap data structure and STL Function For the  C - programming languages.
--	Performing operation in standard time constraint and space constraint.
+     -    Count and Find.
+-	Making it as a header files for user , as there is no inbuilt header files for Hashmap data structure and STL Function For the  C - Users.
+-	Performing operation in standard time constraint and space constraint using linear probing.
 ___
 
 ### Design and Specifications :
-Created 2 files , one is Hashstl.h file which contains Hashmap data structure and stl functions implementation , and the other is Main.c file which contains the main function to use Hashstl.h file.<br>
-To include Hashstl.h in Main.c use #include “Hashstl.h”. <br>
+Created 4 files , First file "<b>hashmap.h</b>"  contains Hashmap function declaration , Second file "<b>hashmap.c</b>" contain implementation of hashmap and its function , Third file "<b>stl.h</b>" contains stl function declaration , Fourth file "<b>stl.c</b>"  contain implementation of stl functions .<br>
+To include hashmap.h and stl.h in Main.c use #include “<b>hashmap.h</b>” ,    #include "<b>stl.h</b>" .<br>
 On executing Main.c , the user get following choices :- 
 -	Insert Key with value.
--	Edit Value of Key.
 -	Delete a Key.
+-	Print Hashmap.
+-	Find value corresponding to key.
+-	Search key.
 -	Clear Hashmap.
--	Print Key value pair.
--	Count and find.
--	Sort and Reverse.
--	Upper bound and lower bound.
+-	Max capacity of Hashmap.
+-	Size of Hashmap.
+-	Check Hashmap empty or not.
+-	Count occurrence of key.
+-	Display STL for Integers.
+-	Display STL for Characters.
 -	Exit.
 <br>
 <i>When user chooses Exit option , the program terminates.</i><br>
-<b>About Hashstl.h file and its working</b>.<br>
-Hashstl.h contain Hashmap data structure implementation and others stl functions .  These functions includes Hashmap implementation , insert key value pairs , delete key , update value , lower bound and upper bound , sort , count and find , reverse.<br><br>
+<b>About hashmap.h file and its working</b>.<br>
+<b>"hashmap.h"</b> contain Hashmap data structure implementation and various hashmap functions .  These functions includes insert key value pairs , delete key , update value , search key , check hashmap empty or not  , etc. <br>
+<b>About stl.h file and its working</b>.<br>
+<b>"stl.h"</b> contain implementation of various stl functions .  These functions includes upper bound , lower bound , reverse , swap , sort , transform , count and find . <br><br>
 
 
-| Function name | Description | Return type |
-| :---: | :---: | :---: |
-| Hashmap_initalize()	| The function helps in allocate memory to Hashmap data structure.	| Void |
-| Insert(key , value)	| The function helps in insert Key and value pair into Hashmap. |	Void |
-| Present(key) |	The function check whether Key is present or not in Hashmap. |	Boolean |
-| Update (key,value) |	The function helps in updating value of key if present , if not present it insert key value pair into Hashmap.	| Void |
-| Delete(key)	| The function helps in delete key value pair if present in Hashmap.	| Void |
-| Clear()	| The function helps in delete all key value pair present in Hashmap.	| Void |
-| Create(size) |	The function helps in allocating memory to dynamic array.	| Void |
-| Upper_bound(val) |	The function provide upper bound on given value.	| Int |
-| Lower_bound (val) |	The function provide lower bound on given value.	| Int | 
-| Sort() |	The function help in sorting data and parameter is optional to sort reverse order.	| Void |
-| Find(val)	| The function check whether element present or not.	| Boolean |
-| Count(val) | The function return count of occurrence of val.	| Int |
-| Reverse()	| The function helps in reversing data.	| Void |
-| Print()	| The function helps in printing data.	| Void |
+| Function name | Description | Time complexity (worst case) | Time complexity (average case) |
+| :---: | :---: | :---: | :---: |
+| insert(key , value)	| The function helps in insert Key and value pair into Hashmap | O(N) | O(1) |
+| delete(key) | The function helps in delete key value pair if present in Hashmap | O(N) | O(1) |
+| display() |	The function helps in printing hashmap | O(N) | O(N) |
+| Clear()	| The function helps in delete all key value pair present in Hashmap	| O(N) | O(N) |
+| value_find(key) | The function helps in accessing value corresponding to key | O(N) | O(1) |
+| search(key) | The function helps in finding key in Hashmap | O(N) | O(1) |
+| Max_element_store() | The function helps in finding maximum capacity of Hashmap | O(1) | O(1) |
+| Map_Size() | The function helps in finding size of Hashmap | O(1) | O(1) |
+| empty() | The function helps in checking Hashmap empty or not | O(1) | O(1) |
+| get_count(key) | The function helps int finding occurrence of key in Hashmap | O(N) | O(1) |
+| Upper_bound(value) |	The function provide upper bound on given value.	| O(logN) | O(logN) |
+| Lower_bound (value) |	The function provide lower bound on given value.	| O(logN) | O(logN) | 
+| Sort() |	 The function help in sorting data . | O(NlogN) | O(NlogN) |
+| Find(value)	| The function check whether element present or not.	| O(N) | O(N) |
+| Count(value) | The function return count of occurrence of value.	| O(N) | O(N) |
+| Reverse()	| The function helps in reversing data.	| O(N) | O(N) |
+| Transform(value)	| The function helps in transforming data by given value.	| O(N) | O(N) |
