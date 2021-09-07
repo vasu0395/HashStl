@@ -34,9 +34,6 @@ void display();
 // Fuction to print size of Hash_map.  (O(1) Time complexity).
 void Map_Size();
 
-// Fuction to initalize_hashmap.  (O(1) Time complexity).
-void initalize_hashmap(int value);
-
 // Fuction to return occurrence of key in Hash_map. (O(1) Time complexity).
 int get_count(int key);
 
