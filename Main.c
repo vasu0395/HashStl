@@ -1,3 +1,15 @@
+/*
+ * Project :- Implementation of Hashmap using linear probing and open addressing and implementation of STL Functions for C Users.
+ *
+ * Compilation :- Main.c hashmap.c hashmap.h stl.c stl.h
+ * Execution :- ./a.out
+ *
+ * @Vasu , 1910990395 , 07-09-2021
+ * Project in C.
+ *
+ * Resources :- Gfg For understanding Hashmap interal working.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "hashmap.h"
@@ -44,11 +56,11 @@ int main ()
         scanf ("\n%c", &val);
 
         if (val == 'E')
-	    {
-	        clear ();
-	        printf ("\n ------ Program Exit successfully -----");
-	        break;
-	    }
+	{
+	    clear ();
+	    printf ("\n ------ Program Exit successfully -----");
+	    break;
+	}
         
         // make switch case for multiple operations.
         switch (val)
@@ -88,6 +100,7 @@ int main ()
                 break;
             }
             
+	    // case to find value corresponding to key.
 	    case 'V':
 	    {
 		int key;
