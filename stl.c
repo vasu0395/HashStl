@@ -102,7 +102,7 @@ void* upper_bound(void** arr,int n,void* x)
 void* lower_bound(void** arr,int n,void* x)
 {
     // base case if values present in array[0] is lower than x
-    if(*(char *)arr[n-1]<*(char *)x)
+    if(*(char *)arr[n-1] < *(char *)x)
     {
         void *temp=(void *)malloc(sizeof(void *) * 1);
         int x=-1;
