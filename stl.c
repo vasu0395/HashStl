@@ -146,7 +146,7 @@ int count(void** arr,int n,void* x)
     for(int i=0;i<n;i++)
     {
         // if value equal to x increment ans by 1.
-        if(*(char *)arr[i]==*(char *)x)
+        if(*(char *)arr[i] == *(char *)x)
         ans++;
     }
     return ans;
