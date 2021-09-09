@@ -80,18 +80,14 @@ void* upper_bound(void** arr,int n,void* x)
     {
         int mid=(low + high)/2;
         // if value of mid is less or equal increment low by mid + 1.
-<<<<<<< HEAD
-        if(*(char *)arr[mid] <= *(char *)x)
-=======
         if(*(char *)arr[mid]<=*(char *)x)
->>>>>>> 8eb5354a1fdaff3e9e78ded891c06d31f4c2b741
         {
             low=mid + 1;
         }
+        // update value of ans and assign value of mid.
+        // if value of mid is greater decrease high by mid - 1.
         else
         {
-            // update value of ans and assign value of mid.
-            // if value of mid is greater decrease high by mid - 1.
             ans=mid;
             high=mid - 1;
         }
@@ -120,12 +116,12 @@ void* lower_bound(void** arr,int n,void* x)
     {
         int mid=(low + high)/2;
         // if x is present in array return.
-        if(*(char *)arr[mid] == *(char *)x)
+        if(*(char *)arr[mid]==*(char *)x)
         {
             return arr[mid];
         }
         // if value of mid is less increment low by mid + 1
-        else if(*(char *)arr[mid] < *(char *)x)
+        else if(*(char *)arr[mid]<*(char *)x)
         {
             low=mid + 1;
         }
@@ -150,7 +146,7 @@ int count(void** arr,int n,void* x)
     for(int i=0;i<n;i++)
     {
         // if value equal to x increment ans by 1.
-        if(*(char *)arr[i] == *(char *)x)
+        if(*(char *)arr[i]==*(char *)x)
         ans++;
     }
     return ans;
