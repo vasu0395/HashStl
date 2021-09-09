@@ -17,7 +17,7 @@ void swap(void **a,int i,int j)
 // Function to reverse array.
 void reverse(void **a,int l,int h)
 {
-    while(l<=h)
+    while(l <= h)
     {
         // swap lower and higher index of array to reverse.
         swap(a,l,h);
