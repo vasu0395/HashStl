@@ -4,6 +4,8 @@
 // <stdbool.h> for using bool return type.
 #include <stdbool.h>
 
+#include "stl.h"
+
 // Function to swap values of array.
 void swap(void **a,int i,int j)
 {
