@@ -80,7 +80,7 @@ void* upper_bound(void** arr,int n,void* x)
     {
         int mid=(low + high)/2;
         // if value of mid is less or equal increment low by mid + 1.
-        if(*(char *)arr[mid]<=*(char *)x)
+        if(*(char *)arr[mid] <= *(char *)x)
         {
             low=mid + 1;
         }
@@ -121,7 +121,7 @@ void* lower_bound(void** arr,int n,void* x)
             return arr[mid];
         }
         // if value of mid is less increment low by mid + 1
-        else if(*(char *)arr[mid]<*(char *)x)
+        else if(*(char *)arr[mid] < *(char *)x)
         {
             low=mid + 1;
         }
