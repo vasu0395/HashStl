@@ -1,4 +1,4 @@
-## Implementation of HashMap Data Structure and STL Functions For C Users.
+## Implementation of HashMap Data Structure and STL Functions For C Users .
 ___
 #### Description :
 What is Hashmap ? 
