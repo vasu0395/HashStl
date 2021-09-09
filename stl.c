@@ -116,7 +116,7 @@ void* lower_bound(void** arr,int n,void* x)
     {
         int mid=(low + high)/2;
         // if x is present in array return.
-        if(*(char *)arr[mid]==*(char *)x)
+        if(*(char *)arr[mid] == *(char *)x)
         {
             return arr[mid];
         }
