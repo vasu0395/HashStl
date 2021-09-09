@@ -42,7 +42,7 @@ void merge(void **a, int L, int mid, int R, void **b, int(*cmp)(void *, void *))
 
     }
     // assign value to array a.
-    for(k = L; k<=R;k++)
+    for(k = L; k<=R ;k++)
 	a[k] = b[k];
 }
 
