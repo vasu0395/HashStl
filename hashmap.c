@@ -56,11 +56,19 @@ struct Hash_map * search(int key,int call)
 {
     // Finding Hash_index corresponding to key.
     int Hash_insert_index=Hash_index(key);
-
+    // creating check array to keep check if same Hash_insert_index visit.
+    int check_map[200]={0};
     // if Hash_map_array[Hash_insert_index] is not NULL.
     // keep checking untill we found empty (NULL) Node .
     while(Hash_map_array[Hash_insert_index]!=NULL)
     {
+        // if we visit same Hash_insert_index again.
+        if(check_map[Hash_insert_index]!=0)
+        {
+            if(!call)
+            printf("%d Key not present in Hash_map\n",key);
+            return NULL;
+        }
         // if value is find then key corresponding to Hash_map_array[Hash_insert_index] == key.
         if(Hash_map_array[Hash_insert_index]->key == key)
         {
@@ -69,7 +77,9 @@ struct Hash_map * search(int key,int call)
             // return Hash_map Node corresponding to Hash_map_array[Hash_insert_index].
             return Hash_map_array[Hash_insert_index];
         }
-         // increment Hash_insert_index by 1.
+        // mark check in check_map.
+        check_map[Hash_insert_index]=1;
+        // increment Hash_insert_index by 1.
         Hash_insert_index++;
         // Finding new Hash_insert_index using modulus operation.
         Hash_insert_index=(Hash_insert_index + SIZE)%SIZE;
@@ -123,11 +133,19 @@ void insert(int key,void* data)
     temp->count_of_occurrence=1;
     // Finding Hash_index corresponding to key.
     int Hash_insert_index=Hash_index(key);
-
+    // creating check array to keep check if same Hash_insert_index visit.
+    int check_map[200]={0};
     // increment Hash_insert_index untill there is a NULL corresponding to Hash_insert_index.
     // if delete operation perform prior then key corresponding to Hash_insert_index is -1.
     while(Hash_map_array[Hash_insert_index]!=NULL && Hash_map_array[Hash_insert_index]->key!=-1)
     {
+        if(check_map[Hash_insert_index]!=0)
+        {
+            printf("Unable to insert (%d , %d) try to resize Hash_map_array.",key,*(int*)data);
+            return;
+        }
+        // mark check_map Hash_insert_index 1.
+        check_map[Hash_insert_index]=1;
         // increment Hash_insert_index by 1.
         Hash_insert_index++;
         // Finding new Hash_insert_index using modulus operation.
